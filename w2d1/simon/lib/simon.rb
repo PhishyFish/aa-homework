@@ -1,5 +1,5 @@
 class Simon
-  COLORS = %w(red blue green yellow)
+  COLORS = %w(red blue green yellow).freeze
 
   attr_accessor :sequence_length, :game_over, :seq
 
@@ -48,8 +48,7 @@ class Simon
     end
 
     unless guess == @seq
-      puts "Wrong! You entered \"#{guess.join(', ')}\"."
-      puts "The correct sequence is \"#{@seq.join(', ')}\"."
+      puts "Wrong! The correct sequence is \"#{@seq.join(', ')}\"."
       @game_over = true
     end
   end
@@ -59,11 +58,11 @@ class Simon
   end
 
   def round_success_message
-    "Great memory! Onto the next round."
+    puts "Great memory! Onto the next round."
   end
 
   def game_over_message
-    puts "Game over!"
+    puts "Game over! You successfully completed #{sequence_length - 1} rounds!"
   end
 
   def reset_game
