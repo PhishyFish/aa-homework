@@ -31,17 +31,27 @@ class Board
 
       case idx
       when 6
-        @cups[6] << stones.pop if current_player_name = name1
+        @cups[6] << stones.pop if current_player_name == @name1
       when 13
-        @cups[13] << stones.pop if current_player_name = name2
+        @cups[13] << stones.pop if current_player_name == @name2
       else
         @cups[idx] << stones.pop
       end
     end
+
+    render
+    next_turn(idx)
   end
 
   def next_turn(ending_cup_idx)
     # helper method to determine what #make_move returns
+    if ending_cup_idx == 6 || ending_cup_idx == 13
+      :prompt
+    elsif @cups[ending_cup_idx].count == 1
+      :switch
+    else
+      ending_cup_idx
+    end
   end
 
   def render
