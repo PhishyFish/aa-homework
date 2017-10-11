@@ -19,7 +19,7 @@ describe Dessert do
     end
 
     it "starts ingredients as an empty array" do
-      expect(dessert.ingredients).to eq([])
+      expect(dessert.ingredients).to be_empty
     end
 
     it "raises an argument error when given a non-integer quantity" do
@@ -28,11 +28,20 @@ describe Dessert do
   end
 
   describe "#add_ingredient" do
-    it "adds an ingredient to the ingredients array"
+    it "adds an ingredient to the ingredients array" do
+      dessert.add_ingredient("eggs")
+      expect(dessert.ingredients).to include("eggs")
+    end
   end
 
   describe "#mix!" do
-    it "shuffles the ingredient array"
+    it "shuffles the ingredient array" do
+      ingredients = ["flour", "milk", "eggs", "sugar"]
+      ingredients.each { |ingredient| dessert.add_ingredient(ingredient) }
+      dessert.mix!
+      expect(dessert.ingredients).to_not eq(ingredients)
+      expect(dessert.ingredients.sort).to eq(ingredients.sort)
+    end
   end
 
   describe "#eat" do
