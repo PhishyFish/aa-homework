@@ -4,15 +4,16 @@ require "benchmark"
 # O(n^2) time
 
 def sluggish(arr)
-  big_fish = arr.first
+  arr.each_with_index do |fish1, idx1|
+    big_fish = true
 
-  arr.each_with_index do |fish1, idx|
-    (arr[0...idx] + arr[idx + 1..-1]).each do |fish2|
-      big_fish = fish2 if fish2.length > fish1.length
+    arr.each_with_index do |fish2, idx2|
+      next if idx1 == idx2
+      big_fish = false if fish2.length > fish1.length
     end
-  end
 
-  big_fish
+    return fish1 if big_fish
+  end
 end
 
 # Dominant Octopus
