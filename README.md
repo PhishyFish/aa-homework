@@ -24,3 +24,12 @@
 
 ### W3D2
 * Object-relational mapping (ORM)
+
+### W3D3
+* Ruby on Rails: associations
+
+### W3D4
+* Ruby on Rails: ActiveRecord
+
+### W3D5
+* Metaprogramming
