@@ -104,16 +104,22 @@ end
 
 
 class MetaCorgiSnacks
+  SNACKS = %i(bone kibble treat).freeze
+
   def initialize(snack_box, box_id)
     @snack_box = snack_box
     @box_id = box_id
   end
 
   def method_missing(name, *args)
-    info = @snack_box.send("get_#{name}_info".to_sym, @box_id)
-    tastiness = @snack_box.send("get_#{name}_tastiness".to_sym, @box_id)
-    result = "#{name.capitalize}: #{info}: #{tastiness}"
-    tastiness > 30 ? "* #{result}" : result
+    if SNACKS.include?(name)
+      info = @snack_box.send("get_#{name}_info".to_sym, @box_id)
+      tastiness = @snack_box.send("get_#{name}_tastiness".to_sym, @box_id)
+      result = "#{name.capitalize}: #{info}: #{tastiness}"
+      tastiness > 30 ? "* #{result}" : result
+    else
+      super
+    end
   end
 
 
