@@ -33,3 +33,8 @@
 
 ### W3D5
 * Metaprogramming
+
+## Rails
+
+### W4D1
+* Library controller
