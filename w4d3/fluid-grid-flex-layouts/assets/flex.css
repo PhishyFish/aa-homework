@@ -23,7 +23,8 @@ header {
 }
 
 header > img {
-  width: 100px;
+  width: auto;
+  height: 50px;
 }
 
 .ingredients-list {
@@ -112,4 +113,43 @@ textarea {
 
 label {
     display: block;
+}
+
+/* Hamburger menu */
+.hamburger-dropdown {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  /* Hamburger menu */
+  .hamburger-dropdown > li {
+    background-image: url(images/hamburger.png);
+    background-repeat: no-repeat;
+    background-size: 50px 50px;
+    width: 50px;
+    height: 50px;
+    /*position: relative;*/
+  }
+
+  .hamburger-dropdown ul {
+    display: none;
+    position: absolute;
+    flex-direction: column;
+    top: 50px;
+    /*left: -20px;*/
+    box-shadow: #000 5px 5px 10px;
+    background: ghostwhite;
+  }
+
+  .hamburger-dropdown, .hamburger-dropdown:hover ul {
+    display: block;
+  }
+
+  .hamburger-dropdown a:hover {
+    text-decoration: underline;
+  }
+
+  nav > ul {
+    display: none;
+  }
 }
