@@ -4,6 +4,9 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
+      msg = UserMailer.welcome_email(@user)
+      msg.deliver_now
+
       login_user!(@user)
       redirect_to cats_url
     else
@@ -18,8 +21,8 @@ class UsersController < ApplicationController
   end
 
   private
-  
+
   def user_params
-    params.require(:user).permit(:password, :username)
+    params.require(:user).permit(:password, :username, :email)
   end
 end
