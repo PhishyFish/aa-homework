@@ -14,4 +14,13 @@ document.addEventListener("DOMContentLoaded", function(){
   ctx.stroke();
   ctx.fillStyle = "rgb(150, 215, 225)";
   ctx.fill();
+
+  ctx.beginPath();
+  ctx.moveTo(125, 75);
+  ctx.quadraticCurveTo(125, 125, 160, 125);
+  ctx.quadraticCurveTo(125, 125, 125, 200);
+  ctx.quadraticCurveTo(125, 125, 90, 125);
+  ctx.quadraticCurveTo(125, 125, 125, 75);
+  ctx.fillStyle = "rgb(240, 240, 240)";
+  ctx.fill();
 });
