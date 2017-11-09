@@ -28,8 +28,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const newLi = document.createElement("li");
     newLi.textContent = favoriteInput;
 
-    const favoritePlaces = document.getElementById("sf-places");
-    favoritePlaces.appendChild(newLi);
+    const placesList = document.getElementById("sf-places");
+    placesList.appendChild(newLi);
   };
 
   const listSubmitButton = document.querySelector(".favorite-submit");
@@ -51,6 +51,23 @@ document.addEventListener("DOMContentLoaded", () => {
   const photoFormButton = document.querySelector(".photo-show-button");
   photoFormButton.addEventListener("click", showPhotoForm);
 
+  const handlePhotoSubmit = event => {
+    event.preventDefault();
 
+    const photoInputEl = document.querySelector(".photo-url-input");
+    const photoUrl = photoInputEl.value;
+    photoInputEl.value = "";
 
+    const newImg = document.createElement("img");
+    newImg.src = photoUrl;
+
+    const newLi = document.createElement("li");
+    newLi.appendChild(newImg);
+
+    const photoList = document.querySelector(".dog-photos");
+    photoList.appendChild(newLi);
+  };
+
+  const photoSubmitButton = document.querySelector(".photo-url-submit");
+  photoSubmitButton.addEventListener("click", handlePhotoSubmit);
 });
