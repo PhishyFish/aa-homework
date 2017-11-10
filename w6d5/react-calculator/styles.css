@@ -1,0 +1,82 @@
+/* reset */
+html, body, header, nav, h1, a,
+ul, li, strong, main, button, i,
+section, img, div, h2, p, form,
+fieldset, label, input, textarea,
+span, article, footer, time, small {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font: inherit;
+  color: inherit;
+  text-align: inherit;
+  text-decoration: inherit;
+  vertical-align: inherit;
+  box-sizing: inherit;
+  background: transparent;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+input[type="password"],
+input[type="email"],
+input[type="text"],
+input[type="submit"],
+textarea,
+button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+button,
+input[type="submit"] {
+  cursor: pointer;
+}
+
+/* styles */
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px auto;
+  width: 50%;
+  max-width: 900px;
+  font-family: 'Helvetica', 'Arial', sans-serif;
+  font-size: 1.2em;
+}
+
+h1 {
+  font-weight: bold;
+  font-size: 3em;
+  text-align: center;
+}
+
+input {
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+button {
+  margin: 20px 15px;
+  padding: 15px 30px;
+  border: 4px solid #0ac;
+  box-sizing: border-box;
+  transition: all 0.2s ease;
+}
+
+button:hover {
+  background-color: #0ac;
+  color: white;
+}

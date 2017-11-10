@@ -9704,11 +9704,6 @@ var Calculator = function (_React$Component) {
         ),
         _react2.default.createElement("input", { onChange: this.setNum1, value: num1 }),
         _react2.default.createElement("input", { onChange: this.setNum2, value: num2 }),
-        _react2.default.createElement(
-          "button",
-          { onClick: this.clear },
-          "Clear"
-        ),
         _react2.default.createElement("br", null),
         _react2.default.createElement(
           "button",
@@ -9729,6 +9724,11 @@ var Calculator = function (_React$Component) {
           "button",
           { onClick: this.divide },
           "/"
+        ),
+        _react2.default.createElement(
+          "button",
+          { onClick: this.clear },
+          "Clear"
         )
       );
     }
