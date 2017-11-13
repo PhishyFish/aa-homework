@@ -12,9 +12,26 @@
 
 .currency-option {
   float: right;
-  padding-left: 5px;
+  margin: 0 10px 10px 10px;
+  padding: 0 10px;
+  border-radius: 5px;
+  background: #888;
+  color: #fff;
 }
 
 .rates-list {
   padding-top: 10px;
+}
+
+body {
+  margin: 0 auto;
+  width: 80%;
+  max-width: 525px;
+  font-family: 'Helvetica', 'Arial', sans-serif;
+}
+
+.red, .green {
+  display: flex;
+  justify-content: space-between;
+  max-width: 200px;
 }

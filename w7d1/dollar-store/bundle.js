@@ -10247,9 +10247,16 @@ var Currency = function Currency(_ref) {
   return _react2.default.createElement(
     "div",
     { className: color },
-    name,
-    "\xA0",
-    rate
+    _react2.default.createElement(
+      "span",
+      null,
+      name
+    ),
+    _react2.default.createElement(
+      "span",
+      null,
+      rate
+    )
   );
 };
 

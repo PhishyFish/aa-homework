@@ -8,9 +8,8 @@ const Currency = ({name, rate}) => {
 
   return (
     <div className={color}>
-      {name}
-      &nbsp;
-      {rate}
+      <span>{name}</span>
+      <span>{rate}</span>
     </div>
   );
 };
