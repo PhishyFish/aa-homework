@@ -1,5 +1,7 @@
 body {
   margin: 30px;
+  display: flex;
+  font-family: 'Helvetica', 'Arial', sans-serif;
 }
 
 ul {
@@ -18,20 +20,22 @@ img {
 
 .search-bar {
   padding-bottom: 15px;
+  align-items: center;
 }
 
 input {
   width: 200px;
   height: 21px;
   font-size: 15px;
-  font-family: 'Helvetica';
-  margin-right: 2px;
-  padding: 0;
+  margin-right: 10px;
+  padding: 5px 10px;
   border: 1px solid lightgray;
+  border-radius: 2px;
 }
 
 button {
-  padding: 6px;
+  padding: 10px;
   border: none;
-  font-size: 10px;
+  font-size: 12px;
+  background: #acd;
 }
