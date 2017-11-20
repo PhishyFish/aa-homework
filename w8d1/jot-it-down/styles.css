@@ -63,10 +63,6 @@ body {
   background: #E7E5DF;
 }
 
-main {
-  padding: 20px 10px;
-}
-
 h1, h2, h3, h4, strong {
   font-weight: bold;
 }
@@ -76,6 +72,13 @@ a, input[type='text'], input[type='submit'] {
 }
 
 header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  box-sizing: border-box;
+  z-index: 2;
+  background: #E7E5DF;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -96,6 +99,10 @@ header a:hover {
   color: #389A87;
 }
 
+header p {
+  text-align: right;
+}
+
 .search {
   display: flex;
 }
@@ -103,6 +110,12 @@ header a:hover {
 .search input:first-child {
   margin-right: 10px;
   padding: 5px;
+}
+
+.search input[type='text'] {
+  width: 100%;
+  min-width: 100px;
+  max-width: 300px;
 }
 
 .search input[type='submit'] {
@@ -119,6 +132,7 @@ header a:hover {
 .logo {
   display: flex;
   align-items: center;
+  margin: 0 20px;
 }
 
 .logo img {
@@ -129,6 +143,10 @@ header a:hover {
 
 .logo h1 {
   font-size: 24px;
+}
+
+.current-user p {
+  text-align: left;
 }
 
 .current-user a {
@@ -161,7 +179,7 @@ nav a:active {
 }
 
 .hero {
-  height: 90%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -239,10 +257,6 @@ footer a:hover {
   color: #fff;
 }
 
-form {
-  /*width: 50%;*/
-}
-
 input[type='text'] {
   border: 1px #D3D0CB solid;
   border-radius: 5px;
@@ -258,13 +272,81 @@ input[type='submit']:active {
   transform: translateY(2px);
 }
 
-main input[type='text'] {
+main {
+  position: relative;
+  z-index: -1;
+  left: 290px;
+  top: 50px;
+  padding: 20px 0;
+  overflow: visible;
+  width: 100%;
+}
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px #9A9894 solid;
+  margin: 30px 0;
+}
+
+.forms {
+  position: fixed;
+  left: 0;
+  z-index: 0;
+  width: 250px;
+  height: 100%;
+  padding: 100px 10px 10px 10px;
+  background: #EFEEEA;
+}
+
+.forms form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.forms input {
+  margin: 5px 0;
+}
+
+.forms input[type='text'] {
   padding: 10px;
 }
 
-main input[type='submit'] {
+.forms input[type='submit'] {
   padding: 10px;
   border-radius: 5px;
   background: #44BBA4;
   color: #fff;
+}
+
+.forms input[type='submit']:hover {
+  background: #389A87;
+}
+
+.lists {
+  display: flex;
+  margin-top: 20px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  min-width: 250px;
+  max-width: 250px;
+  height: 60%;
+  padding: 10px;
+  background: #D3D0CB;
+  margin-right: 10px;
+  border-radius: 5px;
+}
+
+.card li {
+  display: block;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.8);
+  box-shadow: #9A9894 0 1px 2px;
+  border-radius: 5px;
+  margin: 10px 0;
 }
